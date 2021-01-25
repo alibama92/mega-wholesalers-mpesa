@@ -1,5 +1,7 @@
 package com.otblabs.mpesa.c2b;
 
+import com.otblabs.mpesa.c2b.models.RegisterUrlResponse;
+
 public interface C2bService {
-    void registerUrl();
+    RegisterUrlResponse registerUrl(String accessToken);
 }

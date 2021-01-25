@@ -1,10 +1,10 @@
-package com.otblabs.mpesa.callbackurls;
+package com.otblabs.mpesa.stkpush;
 
 import com.otblabs.mpesa.stkpush.models.MpesaResponse;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-public class CallbackListeners {
+public class CallbackListener {
 
 
     @PostMapping("/stk-callback-url")
