@@ -2,6 +2,8 @@ package com.otblabs.mpesa.c2b;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.otblabs.mpesa.c2b.models.C2bConfirmationResponse;
+import com.otblabs.mpesa.c2b.models.C2bValidationResponse;
 import com.otblabs.mpesa.c2b.models.RegisterUrlResponse;
 import com.otblabs.mpesa.stkpush.models.LNMResult;
 import com.otblabs.mpesa.utils.Gen;
@@ -34,6 +36,16 @@ public class c2bServiceImpl implements  C2bService{
         }
 
         return null;
+    }
+
+    @Override
+    public void getConFirmationData(C2bConfirmationResponse c2bConfirmationResponse) {
+        System.out.println("Confirmation Data" + c2bConfirmationResponse.toString());
+    }
+
+    @Override
+    public void getValidationData(C2bValidationResponse c2bValidationResponse) {
+        System.out.println("Validation Data "+c2bValidationResponse.toString());
     }
 
     private String getRegisterUrlPostBody() throws JsonProcessingException {
