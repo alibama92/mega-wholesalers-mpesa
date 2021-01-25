@@ -1,4 +1,4 @@
-package com.otblabs.utils;
+package com.otblabs.mpesa.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -11,13 +11,13 @@ import java.util.List;
 public class HttpService {
 
 
-    public static  <T> T sendGetRequest(Class<T> responseType, HttpClient httpClient, HttpRequest httpRequest) throws IOException, InterruptedException {
+    public static  <T> T sendSingleResponseRequest(Class<T> responseType, HttpClient httpClient, HttpRequest httpRequest) throws IOException, InterruptedException {
 
         HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
         return new ObjectMapper().readValue(response.body(), responseType);
     }
 
-    public <T> List<T> sendGetListRequest(String url, Class<T> responseType, HttpClient httpClient, HttpRequest httpRequest) throws IOException, InterruptedException {
+    public <T> List<T> sendListResponseRequest(String url, Class<T> responseType, HttpClient httpClient, HttpRequest httpRequest) throws IOException, InterruptedException {
 
         HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
         ObjectMapper objectMapper = new ObjectMapper();

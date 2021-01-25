@@ -1,6 +1,6 @@
 package com.otblabs.mpesa.security;
 
-import com.otblabs.utils.HttpService;
+import com.otblabs.mpesa.utils.HttpService;
 import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.net.URI;
@@ -32,7 +32,7 @@ public class AccessTokenServiceImpl implements AccessTokenService{
                     .setHeader("cache-control", "no-cache")
                     .build();
 
-            AccessTokenResponse accessTokenResponse = HttpService.sendGetRequest(AccessTokenResponse.class, client, request);
+            AccessTokenResponse accessTokenResponse = HttpService.sendSingleResponseRequest(AccessTokenResponse.class, client, request);
             return accessTokenResponse;
 
         } catch (IOException e) {

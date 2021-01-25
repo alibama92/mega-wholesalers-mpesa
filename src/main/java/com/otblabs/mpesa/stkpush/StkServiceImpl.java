@@ -3,9 +3,9 @@ package com.otblabs.mpesa.stkpush;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.otblabs.mpesa.stkpush.models.LNMResult;
-import com.otblabs.utils.Gen;
-import com.otblabs.utils.HttpService;
-import com.otblabs.utils.Urls;
+import com.otblabs.mpesa.utils.Gen;
+import com.otblabs.mpesa.utils.HttpService;
+import com.otblabs.mpesa.utils.Urls;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class StkServiceImpl implements StkService{
                     .setHeader("authorization", "Bearer "+accessToken)
                     .setHeader("content-type", "application/json")
                     .build();
-            HttpService.sendGetRequest(LNMResult.class,httpClient, request);
+          return   HttpService.sendSingleResponseRequest(LNMResult.class,httpClient, request);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

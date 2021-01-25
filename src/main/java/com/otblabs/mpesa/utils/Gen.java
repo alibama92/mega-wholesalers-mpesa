@@ -1,4 +1,4 @@
-package com.otblabs.utils;
+package com.otblabs.mpesa.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Base64;
