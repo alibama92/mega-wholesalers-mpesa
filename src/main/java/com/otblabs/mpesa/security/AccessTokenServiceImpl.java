@@ -3,19 +3,16 @@ package com.otblabs.mpesa.security;
 import com.otblabs.utils.HttpService;
 import org.springframework.stereotype.Service;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.util.ArrayList;
 import java.util.Base64;
 
 @Service
 public class AccessTokenServiceImpl implements AccessTokenService{
 
     @Override
-    public DarajaResponse getAccessToken(String mpesaConsumerKey, String mpesaConsumerSecret) {
+    public AccessTokenResponse getAccessToken(String mpesaConsumerKey, String mpesaConsumerSecret) {
 
         // Use java 8 implementation of base64 to encode the consumer key and consumer secret.
         String app_key = mpesaConsumerKey;
@@ -35,8 +32,8 @@ public class AccessTokenServiceImpl implements AccessTokenService{
                     .setHeader("cache-control", "no-cache")
                     .build();
 
-            DarajaResponse darajaResponse  = HttpService.sendGetRequest(DarajaResponse.class, client, request);
-            return darajaResponse;
+            AccessTokenResponse accessTokenResponse = HttpService.sendGetRequest(AccessTokenResponse.class, client, request);
+            return accessTokenResponse;
 
         } catch (IOException e) {
             e.printStackTrace();

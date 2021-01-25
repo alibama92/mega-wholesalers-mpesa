@@ -1,10 +1,10 @@
 package com.otblabs.mpesa.security;
 
-public class DarajaResponse {
+public class AccessTokenResponse {
     private String access_token;
     private String expires_in;
 
-    public DarajaResponse() {
+    public AccessTokenResponse() {
     }
 
     public String getAccess_token() {
