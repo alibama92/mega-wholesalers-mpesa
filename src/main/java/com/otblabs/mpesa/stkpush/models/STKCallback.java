@@ -1,4 +1,4 @@
-package com.otblabs.mpesa.models;
+package com.otblabs.mpesa.stkpush.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

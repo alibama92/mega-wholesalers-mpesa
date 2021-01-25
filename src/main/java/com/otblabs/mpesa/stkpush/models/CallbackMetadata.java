@@ -1,7 +1,6 @@
-package com.otblabs.mpesa.stkpush;
+package com.otblabs.mpesa.stkpush.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.otblabs.mpesa.models.MetaItem;
 
 import java.util.List;
 

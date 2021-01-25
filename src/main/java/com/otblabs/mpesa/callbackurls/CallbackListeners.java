@@ -1,13 +1,13 @@
 package com.otblabs.mpesa.callbackurls;
 
-import com.otblabs.mpesa.stkpush.MpesaResponse;
+import com.otblabs.mpesa.stkpush.models.MpesaResponse;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 public class CallbackListeners {
 
 
-    @PostMapping("/callback-url")
+    @PostMapping("/stk-callback-url")
     public void getStkCallback(@RequestBody MpesaResponse mpesaResponse){
 
         if(mpesaResponse != null){
@@ -15,9 +15,11 @@ public class CallbackListeners {
 
                 //successful transaction
                 var response = mpesaResponse;
+                System.out.println(mpesaResponse);
             }else{
                 //transaction failed
                 var response = mpesaResponse;
+                System.out.println(mpesaResponse);
             }
         }
 
