@@ -36,6 +36,8 @@ public class StkServiceImpl implements StkService{
         return null;
     }
 
+
+    //gives sample test data for calling the REST endpoint
     private String getStkPostBody() throws JsonProcessingException {
         var values = new HashMap<String, String>() {{
             put("BusinessShortCode", "174379");
