@@ -40,17 +40,16 @@ public class TransactionStatusImpl implements TransactionStatusService{
     //gives sample test data for calling the REST endpoint
     private String getTransactionStatusPostBody() throws JsonProcessingException {
         var values = new HashMap<String, String>() {{
-            put("BusinessShortCode", "174379");
-            put ("Password", Gen.generatePassword("174379","bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919"));
-            put("Timestamp", Gen.generateTimestamp());
-            put("TransactionType", "CustomerPayBillOnline");
-            put("Amount", "1");
-            put("PartyA", Gen.formatPhoneNumber("0718728894"));
-            put("PartyB", "174379");
-            put("PhoneNumber", Gen.formatPhoneNumber("0718728894"));
-            put("CallBackURL", "https://kapul-rides-api.herokuapp.com/payments/mpesa/callback-url");
-            put("AccountReference", "Account refference");
-            put("TransactionDesc", "Transaction Description");
+            put("Initiator", "");
+            put ("SecurityCredential", "");
+            put("CommandID", "");
+            put("TransactionID", "TransactionStatusQuery");
+            put("PartyA", "");
+            put("IdentifierType", "");
+            put("ResultURL", "");
+            put("QueueTimeOutURL", "");
+            put("Remarks", "Check transaction status");
+            put("Occasion", "Account refference");
 
         }};
 

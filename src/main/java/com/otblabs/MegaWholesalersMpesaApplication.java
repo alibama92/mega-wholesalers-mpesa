@@ -3,6 +3,7 @@ package com.otblabs;
 import com.otblabs.mpesa.c2b.C2bService;
 import com.otblabs.mpesa.c2b.models.RegisterUrlResponse;
 import com.otblabs.mpesa.security.AccessTokenService;
+import com.otblabs.mpesa.utils.Utility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,8 +14,7 @@ public class MegaWholesalersMpesaApplication implements CommandLineRunner {
 
 	@Autowired
 	C2bService c2bService;
-	@Autowired
-	AccessTokenService accessTokenService;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(MegaWholesalersMpesaApplication.class, args);
@@ -24,7 +24,7 @@ public class MegaWholesalersMpesaApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		//call c2b register url on every server restart
 		//just incase server restart changes the urls
-		RegisterUrlResponse registerUrlResponse = c2bService.registerUrl(accessTokenService.getAccessToken("4BMXY3dMmUcYH8EVsHNi7LmMMRW2Qb0l", "iGylY5r8YMwVgLYX").getAccess_token());
+		RegisterUrlResponse registerUrlResponse = c2bService.registerUrl(Utility.getAccessToken());
 		System.out.println(registerUrlResponse.toString());
 
 
