@@ -1,4 +1,4 @@
-package com.otblabs.mpesa.transactionstatus;
+package com.otblabs.mpesa.transactionstatus.models;
 
 public class Result {
         private String ResultType;

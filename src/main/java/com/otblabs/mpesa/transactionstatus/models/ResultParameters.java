@@ -1,4 +1,4 @@
-package com.otblabs.mpesa.transactionstatus;
+package com.otblabs.mpesa.transactionstatus.models;
 
 import java.util.List;
 

@@ -1,4 +1,6 @@
-package com.otblabs.mpesa.transactionstatus;
+package com.otblabs.mpesa.transactionstatus.models;
+
+import com.otblabs.mpesa.transactionstatus.models.Result;
 
 public class TransactionStatusCallbackResponse {
     private Result result;
